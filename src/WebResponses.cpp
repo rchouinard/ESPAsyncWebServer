@@ -483,26 +483,26 @@ AsyncFileResponse::~AsyncFileResponse(){
 }
 
 void AsyncFileResponse::_setContentType(const String& path){
-  if (path.endsWith(".html")) _contentType = "text/html";
-  else if (path.endsWith(".htm")) _contentType = "text/html";
-  else if (path.endsWith(".css")) _contentType = "text/css";
-  else if (path.endsWith(".json")) _contentType = "application/json";
-  else if (path.endsWith(".js")) _contentType = "application/javascript";
+  if (path.endsWith(".html")) _contentType = "text/html; charset=utf-8";
+  else if (path.endsWith(".htm")) _contentType = "text/html; charset=utf-8";
+  else if (path.endsWith(".css")) _contentType = "text/css; charset=utf-8";
+  else if (path.endsWith(".json")) _contentType = "application/json; charset=utf-8";
+  else if (path.endsWith(".js")) _contentType = "text/javascript; charset=utf-8";
   else if (path.endsWith(".png")) _contentType = "image/png";
   else if (path.endsWith(".gif")) _contentType = "image/gif";
   else if (path.endsWith(".jpg")) _contentType = "image/jpeg";
   else if (path.endsWith(".jpeg")) _contentType = "image/jpeg";
   else if (path.endsWith(".ico")) _contentType = "image/x-icon";
-  else if (path.endsWith(".svg")) _contentType = "image/svg+xml";
+  else if (path.endsWith(".svg")) _contentType = "image/svg+xml; charset=utf-8";
   else if (path.endsWith(".svgz")){
-    _contentType = "image/svg+xml";
+    _contentType = "image/svg+xml; charset=utf-8";
     addHeader("Content-Encoding", "gzip");
   }
   else if (path.endsWith(".eot")) _contentType = "font/eot";
   else if (path.endsWith(".woff")) _contentType = "font/woff";
   else if (path.endsWith(".woff2")) _contentType = "font/woff2";
   else if (path.endsWith(".ttf")) _contentType = "font/ttf";
-  else if (path.endsWith(".xml")) _contentType = "text/xml";
+  else if (path.endsWith(".xml")) _contentType = "text/xml; charset=utf-8";
   else if (path.endsWith(".pdf")) _contentType = "application/pdf";
   else if (path.endsWith(".zip")) _contentType = "application/zip";
   else if(path.endsWith(".gz")) _contentType = "application/x-gzip";
