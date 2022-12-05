@@ -347,7 +347,7 @@ void AsyncEventSource::handleRequest(AsyncWebServerRequest *request){
 AsyncEventSourceResponse::AsyncEventSourceResponse(AsyncEventSource *server){
   _server = server;
   _code = 200;
-  _contentType = "text/event-stream";
+  _contentType = "text/event-stream; charset=utf-8";
   _sendContentLength = false;
   addHeader("Cache-Control", "no-cache");
   addHeader("Connection","keep-alive");
